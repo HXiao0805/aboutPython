@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
 """
-随机骰子游戏：玩家先选Big or Small，选择后开始摇号，计算号码总值，
-11<=总值<=18为“Big”，3<=总值<=10为“Small”，然后告诉玩家是否猜测正确
+随机骰子游戏：玩家先选Big or Small，选择后开始摇号，
+系统计算号码总值，11<=总值<=18为“Big”，3<=总值<=10为“Small”，
+然后告诉玩家是否猜测正确，玩家有本金1000元，猜对一次加500，
+猜错一次扣500。在本金为0时玩家被强制退出；若本金还有值，
+玩家可以自行选择是否退出。
 
 """
 import random
@@ -57,10 +60,17 @@ if __name__=="__main__":
                 print("sorry,you are wrang,you think is 'Small',but is ",number_list,"is 'Big'")
         
         print("money is",str(money),"元")
+        
+        #本金为0时强制退出
+        if money==0:
+            print('您的本金已经为0，已被强制退出')
+            break
         #第一次结束后提示是否继续
         continue_string=input("continue? n/y")
-        #选择退出或金额为0即退出
-        if continue_string=="n" or money==0:
+        #选择退出即退出
+        if continue_string=="n" :
+            print('退出游戏成功')
             break
+       
         
     
