@@ -10,7 +10,7 @@
 """
 import random
 #产生3个随机数
-def give_3_number():
+def give_3_number(): 
     #定义一个列表
     number_list=[]
     #产生3个1~6的随机数
